@@ -1,0 +1,110 @@
+const closeAddBtn = document.querySelector(".close-add-js");
+closeAddBtn.addEventListener("click", (e) => e.target.closest(".header__add").remove());
+
+const hamburgerBtns = document.querySelectorAll(".hamburger-btn-js");
+const header = document.querySelector(".header");
+hamburgerBtns.forEach((item) => item.addEventListener("click", () => header.classList.toggle("active")));
+
+const links = document.querySelectorAll("a[href]");
+
+links.forEach((item) => {
+  item.addEventListener("click", () => {
+    header.classList.remove("active");
+  });
+});
+
+const hoverLink = document.querySelector(".hover-link");
+const hoverThis = document.querySelector(".hover-this");
+hoverThis.addEventListener("click", (e) => {
+  hoverLink.classList.add("active");
+});
+
+const closeSubList = document.querySelector(".close-sub-list");
+closeSubList.addEventListener("click", (e) => {
+  hoverLink.classList.remove("active");
+});
+
+const accordions = document.querySelectorAll(".accordion");
+const accordionsHeading = document.querySelectorAll(".accordion__heading");
+const accordionLists = document.querySelectorAll(".accordion__list");
+accordionsHeading.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    const clickedAccordion = e.target.closest(".accordion");
+    const accordionList = clickedAccordion.querySelector(".accordion__list");
+
+    if (clickedAccordion.classList.contains("active")) {
+      accordionList.style.maxHeight = "0";
+      clickedAccordion.classList.remove("active");
+    } else {
+      accordions.forEach((item) => {
+        item.classList.remove("active");
+      });
+      accordionLists.forEach((item) => {
+        item.style.maxHeight = 0;
+      });
+
+      clickedAccordion.classList.add("active");
+      accordionList.style.maxHeight = accordionList.scrollHeight + "px";
+    }
+  });
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth <= 600) {
+    accordionLists.forEach((item) => {
+      item.style.maxHeight = "0";
+    });
+    if (document.querySelector(".accordion.active")) {
+      // accordionLists.forEach((item) => {
+      //   item.style.maxHeight = "0";
+      // });
+      const accordionActive = document.querySelector(".accordion.active");
+      const accordionActiveList = accordionActive.querySelector(".accordion__list");
+      accordionActiveList.style.maxHeight = accordionActiveList.scrollHeight + "px";
+    }
+  } else {
+    accordionLists.forEach((item) => {
+      item.style.maxHeight = "unset";
+    });
+  }
+});
+
+const uvpSplides = document.querySelectorAll(".uvp-splide");
+uvpSplides.forEach((item) => {
+  const splideItem = new Splide(item, {
+    perPage: 1,
+    autoWidth: true,
+    pagination: false,
+    arrows: false,
+    gap: "24px",
+  });
+  splideItem.mount();
+});
+
+const splideInsta = new Splide(".splide-insta", {
+  perPage: 1,
+  autoWidth: true,
+  pagination: false,
+  arrows: false,
+  type: "loop",
+  // mediaQuery: "max",
+  // breakpoints: {
+  //   375: {
+  //     perpage: 2,
+  //   },
+  // },
+});
+
+splideInsta.mount();
+
+const splideProducts = document.querySelectorAll(".splide-products");
+
+splideProducts.forEach((item) => {
+  const splideProduct = new Splide(item, {
+    autoWidth: true,
+    pagination: false,
+    gap: "24px",
+  });
+
+  splideProduct.mount();
+});

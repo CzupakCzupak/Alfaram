@@ -1,0 +1,39 @@
+.uvp {
+  border-bottom: 1px solid $grayscale-200;
+  .container {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 328px;
+  }
+
+  &__icon {
+    display: grid;
+    place-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 200px;
+    flex-shrink: 0;
+    background-color: $primary-050;
+  }
+
+  &__text {
+    @include jakarta(14px, 20px);
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 870px) {
+  .uvp {
+    .container {
+      padding: 16px 0 16px 16px;
+    }
+    &__box {
+      width: 208px;
+    }
+  }
+}

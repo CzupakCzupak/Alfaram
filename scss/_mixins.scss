@@ -1,0 +1,17 @@
+@mixin jakarta($fs, $lh, $lsp: normal) {
+  font-size: $fs;
+  line-height: $lh;
+  font-family: "Plus Jakarta Sans";
+  @if $lsp != normal {
+    letter-spacing: $lsp;
+  }
+}
+
+@mixin roboto-con($fs, $lh, $lsp: normal) {
+  font-size: $fs;
+  line-height: $lh;
+  font-family: "Roboto Condensed";
+  @if $lsp != normal {
+    letter-spacing: $lsp;
+  }
+}

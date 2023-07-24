@@ -1,0 +1,20 @@
+.btn {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  max-width: fit-content;
+  padding: 12px 20px 12px 24px;
+  @include jakarta(14px, 24px, 1px);
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: 0.3s background-Color;
+}
+
+.btn-primary100 {
+  background-color: $primary-100;
+  color: $black;
+  fill: $black;
+  &:hover {
+    background: $primary-400;
+  }
+}

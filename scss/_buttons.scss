@@ -18,3 +18,12 @@
     background: $primary-400;
   }
 }
+
+.btn-grayscale900 {
+  background-color: $grayscale-900;
+  color: $white;
+  transition: 0.3s opacity;
+  &:hover {
+    opacity: 0.8;
+  }
+}

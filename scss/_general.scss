@@ -65,6 +65,12 @@ img {
   object-fit: cover;
 }
 
+.heading-secondary {
+  font-weight: 700;
+  text-transform: uppercase;
+  @include roboto-con(48px, 48px);
+}
+
 .heading-tertiary {
   font-weight: 700;
   text-transform: uppercase;

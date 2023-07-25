@@ -87,6 +87,7 @@ const splideInsta = new Splide(".splide-insta", {
   pagination: false,
   arrows: false,
   type: "loop",
+  focus: "center",
   // mediaQuery: "max",
   // breakpoints: {
   //   375: {
@@ -108,3 +109,44 @@ splideProducts.forEach((item) => {
 
   splideProduct.mount();
 });
+
+const gallerySplide = new Splide(".splide-gallery", {
+  autoWidth: true,
+  type: "loop",
+  pagination: false,
+  arrows: false,
+  gap: "24px",
+  padding: {
+    left: "361px",
+  },
+  start: 1,
+  breakpoints: {
+    1530: {
+      padding: {
+        left: "0",
+      },
+    },
+    870: {
+      focus: "center",
+    },
+  },
+});
+
+gallerySplide.mount();
+
+const gallerySplideReverse = new Splide(".splide-gallery-reverse", {
+  autoWidth: true,
+  type: "loop",
+  pagination: false,
+  arrows: false,
+  gap: "24px",
+  start: 1,
+
+  breakpoints: {
+    870: {
+      focus: "center",
+    },
+  },
+});
+
+gallerySplideReverse.mount();

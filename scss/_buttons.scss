@@ -27,3 +27,11 @@
     opacity: 0.8;
   }
 }
+
+.btn-white {
+  background-color: $white;
+  color: $black;
+  &:hover {
+    background-color: darken($white, 2%);
+  }
+}

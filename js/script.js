@@ -6,15 +6,16 @@ const header = document.querySelector(".header");
 hamburgerBtns.forEach((item) => item.addEventListener("click", () => header.classList.toggle("active")));
 
 const links = document.querySelectorAll("a[href]");
+const hoverLink = document.querySelector(".hover-link");
+const hoverThis = document.querySelector(".hover-this");
 
 links.forEach((item) => {
   item.addEventListener("click", () => {
     header.classList.remove("active");
+    hoverLink.classList.remove("active");
   });
 });
 
-const hoverLink = document.querySelector(".hover-link");
-const hoverThis = document.querySelector(".hover-this");
 hoverThis.addEventListener("click", (e) => {
   hoverLink.classList.add("active");
 });
@@ -150,3 +151,14 @@ const gallerySplideReverse = new Splide(".splide-gallery-reverse", {
 });
 
 gallerySplideReverse.mount();
+
+const splideHero = new Splide(".splide-hero", {
+  type: "loop",
+  // autoplay: true,
+  interval: 5000,
+  classes: {
+    page: "splide__pagination__page svg-anim",
+  },
+});
+
+splideHero.mount();

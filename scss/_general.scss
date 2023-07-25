@@ -65,22 +65,30 @@ img {
   object-fit: cover;
 }
 
-.heading-secondary {
-  font-weight: 700;
-  text-transform: uppercase;
-  @include roboto-con(48px, 48px);
-}
+.heading {
+  &-primary,
+  &-secondary,
+  &-tertiary,
+  &-quarternary {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 
-.heading-tertiary {
-  font-weight: 700;
-  text-transform: uppercase;
-  @include roboto-con(32px, 40px);
-}
+  &-primary {
+    @include roboto-con(80px, 80px);
+  }
 
-.heading-quarternary {
-  font-weight: 700;
-  text-transform: uppercase;
-  @include roboto-con(24px, 32px);
+  &-secondary {
+    @include roboto-con(48px, 48px);
+  }
+
+  &-tertiary {
+    @include roboto-con(32px, 40px);
+  }
+
+  &-quarternary {
+    @include roboto-con(24px, 32px);
+  }
 }
 
 .show-more {

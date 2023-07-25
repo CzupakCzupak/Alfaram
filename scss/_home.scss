@@ -1,3 +1,76 @@
+.hero {
+  &__container {
+    max-width: 1856px;
+    margin: 0 auto;
+  }
+
+  &__slide {
+    display: flex;
+    position: relative;
+  }
+
+  &__box-left {
+    width: 329px;
+    height: auto;
+    background-color: $primary-100;
+    display: flex;
+    align-items: end;
+  }
+
+  &__triangle {
+    width: 100%;
+    height: auto;
+  }
+
+  &__box-main {
+    max-width: 1531px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__box {
+    max-width: 525px;
+    position: absolute;
+    top: 34%;
+    left: 12.7%;
+    .heading-primary {
+      margin-bottom: 32px;
+      color: $white;
+    }
+    svg {
+      stroke: $black;
+    }
+  }
+
+  .splide__arrow {
+    display: grid;
+    place-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: $white;
+    opacity: unset;
+    &--prev {
+      left: 48px;
+    }
+    &--next {
+      right: 48px;
+    }
+  }
+
+  .splide__pagination__page.svg-anim {
+    width: 24px;
+    height: 24px;
+    background-color: unset !important;
+    background-image: url(../img/slider-nav-items.svg);
+    &.is-active {
+      transform: unset;
+      animation: animHero 3s 1;
+    }
+  }
+}
+
 .products {
   margin-bottom: 64px;
 
@@ -291,6 +364,38 @@
   .padr-15 {
     padding-right: 15px;
   }
+
+  .hero {
+    &__slide {
+      flex-direction: column-reverse;
+    }
+
+    &__box-left {
+      width: 100%;
+    }
+
+    &__box {
+      top: unset;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 88px;
+      .heading-primary {
+        text-align: center;
+        margin-bottom: 24px;
+        color: $black;
+        font-size: 48px;
+        line-height: 48px;
+      }
+      .btn-white {
+        margin: 0 auto;
+        background-color: $black;
+        color: $white;
+        svg {
+          stroke: $white;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1063px) {
@@ -319,6 +424,13 @@
 }
 
 @media (max-width: 870px) {
+  .hero {
+    &__img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
   .product {
     max-width: 254px;
   }

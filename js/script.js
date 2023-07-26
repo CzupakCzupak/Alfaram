@@ -154,11 +154,25 @@ gallerySplideReverse.mount();
 
 const splideHero = new Splide(".splide-hero", {
   type: "loop",
-  // autoplay: true,
   interval: 5000,
-  classes: {
-    page: "splide__pagination__page svg-anim",
+  autoplay: true,
+  arrows: true,
+  breakpoints: {
+    375: {
+      arrows: false,
+    },
   },
+});
+
+const hero = document.querySelector(".splide-hero");
+
+splideHero.on("pagination:mounted", function (data) {
+  const paginationPage = hero.querySelectorAll(".splide__pagination__page");
+  const svg = `<svg height="40" width="40"><circle stroke="#fff" stroke-dasharray="75.39822368615503 75.39822368615503" stroke-width="2" fill="transparent" r="12" cx="20" cy="20"></circle></svg>`;
+  paginationPage.forEach((item) => {
+    item.innerHTML = svg;
+    console.log(svg);
+  });
 });
 
 splideHero.mount();

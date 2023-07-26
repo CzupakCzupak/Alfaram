@@ -59,14 +59,75 @@
     }
   }
 
-  .splide__pagination__page.svg-anim {
-    width: 24px;
-    height: 24px;
-    background-color: unset !important;
-    background-image: url(../img/slider-nav-items.svg);
-    &.is-active {
-      transform: unset;
-      animation: animHero 3s 1;
+  .splide {
+    &__pagination {
+      bottom: 48px;
+      left: auto;
+      right: 48px;
+      padding: 0;
+
+      &__page {
+        background: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0;
+        position: relative;
+        pointer-events: all;
+        background: none;
+        border: none;
+        opacity: 1;
+        padding: 0;
+
+        &:after {
+          content: "";
+          display: block;
+          border-radius: 50%;
+          position: absolute;
+          pointer-events: none;
+          width: 10px;
+          height: 10px;
+          background-color: #fff;
+          top: 15px;
+          left: 15px;
+          transition: background-color 0.2s ease;
+          will-change: background-color;
+        }
+
+        svg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+          will-change: opacity;
+        }
+
+        circle {
+          stroke-dashoffset: 75.39822368615503;
+          transition: stroke-dashoffset 0.35s;
+          transform: rotate(-90deg);
+          transform-origin: 50% 50%;
+          pointer-events: none;
+          will-change: stroke-dashoffset;
+        }
+
+        &.is-active {
+          background-color: unset;
+          transform: none;
+
+          svg {
+            opacity: 1;
+          }
+
+          circle {
+            -webkit-animation: circle-paint 5s linear both;
+            animation: circle-paint 5s linear both;
+          }
+        }
+      }
     }
   }
 }
@@ -209,6 +270,8 @@
 }
 
 .gallery {
+  overflow: hidden;
+
   padding: 104px 0;
   position: relative;
   margin-bottom: 64px;
@@ -276,7 +339,7 @@
     }
 
     .thin-jakarta {
-      @include jakarta(18px, 28px);
+      @include jakarta(16px, 28px);
       margin-bottom: 32px;
       color: $grayscale-800;
     }
@@ -446,6 +509,7 @@
 
   .gallery {
     margin-bottom: 15px;
+
     &-reverse {
       margin-bottom: 47px;
       flex-direction: column-reverse;

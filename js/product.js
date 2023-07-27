@@ -197,9 +197,6 @@ function handleIntersection(entries, observer) {
       if (currentLink) {
         currentLink.classList.add("is-active");
       }
-      console.log("intersekcjuje");
-    } else {
-      console.log("nie intersekcjuje");
     }
   });
 }

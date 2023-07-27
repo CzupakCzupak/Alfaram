@@ -37,6 +37,10 @@ body {
   margin: 0 auto;
 }
 
+.posrel {
+  position: relative;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -120,12 +124,20 @@ img {
   align-items: flex-start;
 }
 
+.jc-sa {
+  justify-content: space-around;
+}
+
 .jc-e {
   justify-content: flex-end;
 }
 
 .jc-s {
   justify-content: flex-start;
+}
+
+.fs-0 {
+  flex-shrink: 0;
 }
 
 .jc-c {

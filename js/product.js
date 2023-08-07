@@ -144,43 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
   thumbnails.mount();
 });
 
-// const names = document.querySelectorAll(".product__categories-name");
-// const sections = document.querySelectorAll("#opis, #specyfikacja, #montaz, #transport, #konserwacja");
-
-// function handleIntersection(entries, observer) {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       names.forEach((item) => {
-//         item.classList.remove("is-active");
-//       });
-
-//       names.forEach((sectiony) => {
-//         console.log(sectiony.href);
-//         console.log(entry.target.id);
-//         if (sectiony.href !== entry.target.id) {
-//           sectiony.classList.remove("is-active");
-//         }
-//       });
-//       const currentLink = document.querySelector(`.${entry.target.id}`);
-//       currentLink.classList.add("is-active");
-//       console.log("intersekcjuje");
-//     } else {
-//       console.log(" nie intersekcjuje");
-//     }
-//   });
-// }
-
-// // Create an Intersection Observer instance for each section
-// const observers = [];
-// sections.forEach((section) => {
-//   const observer = new IntersectionObserver(handleIntersection, {
-//     root: null,
-//     threshold: 0.2, // 50% of the section visible for this example
-//   });
-//   observer.observe(section);
-//   observers.push(observer);
-// });
-
 const names = document.querySelectorAll(".product__categories-name");
 const sections = document.querySelectorAll("#opis, #specyfikacja, #montaz, #transport, #konserwacja");
 
@@ -201,7 +164,6 @@ function handleIntersection(entries, observer) {
   });
 }
 
-// Create an Intersection Observer instance for each section
 const observers = [];
 sections.forEach((section) => {
   const observer = new IntersectionObserver(handleIntersection, {
@@ -211,3 +173,146 @@ sections.forEach((section) => {
   observer.observe(section);
   observers.push(observer);
 });
+
+const configSelect = document.querySelectorAll(".configurator__select");
+
+const handleSelectList = (e) => {
+  const selectList = e.target.closest(".configurator__select");
+  if (selectList.classList.contains("is-active")) {
+    const selectOption = e.target.closest(".configurator__option");
+    if (selectOption) {
+      const selectValue = selectList.querySelector(".select-value");
+      if (selectOption) {
+        selectValue.textContent = `${selectOption.dataset.size} cm`;
+      }
+    }
+    selectList.classList.remove("is-active");
+  } else {
+    configSelect.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+    selectList.classList.add("is-active");
+  }
+};
+
+configSelect.forEach((item) => {
+  item.addEventListener("click", handleSelectList);
+});
+
+const selectOptions = document.querySelectorAll(".configurator__option");
+const selectGrid = document.querySelector(".configurator__grid");
+const selectGridPersonal = document.querySelector(".configurator__grid.personal");
+const configPersonal = document.querySelector(".box-personal");
+const boxPersonal = configPersonal.querySelector(".configurator__personal-box");
+
+configPersonal.addEventListener("click", () => {
+  selectGrid.classList.toggle("active");
+  selectGridPersonal.classList.toggle("active");
+  boxPersonal.classList.toggle("is-active");
+  // selectPersonal.classList.toggle("active");
+});
+
+const configAct = document.querySelectorAll(".config-activation");
+const configOpt = document.querySelector(".config-options");
+const shadow = document.querySelector(".shadow");
+shadow.addEventListener("click", () => {
+  closeShadows();
+});
+
+const configContainer = document.querySelector(".config-options__container");
+const openConfig = document.querySelectorAll(".open-configurator");
+const configName = document.querySelector(".config-name");
+openConfig.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    const currentConfig = e.target.closest(".open-configurator");
+    configOpt.classList.add("is-active");
+    shadowy.classList.add("active");
+    shadow.classList.add("active");
+    const clickedConfig = configOpt.querySelector(`[data-config='${currentConfig.dataset.config}']`);
+    clickedConfig.classList.add("active");
+    const name = currentConfig.querySelector(".configurator__subheading");
+    configName.textContent = name.textContent;
+  });
+});
+
+const hueJs = document.querySelectorAll(".hue-js");
+const colorName = document.querySelector(".color-name-js");
+
+hueJs.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    const hueColor = e.target.closest(".hue-js");
+    const hueText = hueColor.querySelector(".hue-text");
+    colorName.textContent = hueText.textContent;
+  });
+});
+
+const configAccordions = document.querySelectorAll(".configurator__accordions");
+const countAccordionChildren = () => {
+  configAccordions.forEach((item) => {
+    if (item.childElementCount > 1) {
+      const mb = item.querySelector(".open-configurator");
+      mb.classList.add("mb-14");
+    }
+  });
+};
+const inputFileContainer = document.querySelector(".file-container");
+const imgInput = inputFileContainer.querySelector(".input-file-img");
+
+const configSelects = document.querySelectorAll(".select");
+const configLongevity = document.querySelector(".configurator__longevity");
+const lightLongevity = document.querySelector(".light__longevity");
+configSelects.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    const clickedSelect = e.target.closest(".select");
+    if (clickedSelect.classList.contains("active")) {
+      if (e.target.closest(".light__longevity-option")) {
+        const clickedSelectText = clickedSelect.querySelector(".light__longevity");
+        const clickedConfig = document.querySelector(`.${clickedSelect.dataset.config}`);
+        if (clickedSelect.dataset.config == "logo") {
+          if (e.target.textContent != "Nie") {
+            inputFileContainer.classList.add("active");
+          } else {
+            inputFileContainer.classList.remove("active");
+          }
+        }
+        const clickedConfigParent = clickedConfig.closest(".config-text-js");
+        clickedConfigParent.classList.add("active");
+        clickedConfig.textContent = e.target.textContent;
+        clickedSelectText.textContent = e.target.textContent;
+        countAccordionChildren();
+      }
+      clickedSelect.classList.remove("active");
+    } else {
+      configSelects.forEach((item) => {
+        item.classList.remove("active");
+      });
+      clickedSelect.classList.add("active");
+    }
+  });
+});
+
+window.addEventListener("click", (e) => {
+  if (!e.target.closest(".configurator__select")) {
+    configSelect.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+  }
+  if (!e.target.closest(".select")) {
+    configSelects.forEach((item) => {
+      item.classList.remove("active");
+    });
+  }
+});
+
+const shadowy = document.querySelector(".shadowy");
+
+shadowy.addEventListener("click", closeShadows);
+
+function closeShadows() {
+  configOpt.classList.remove("is-active");
+  configAct.forEach((item) => {
+    item.classList.remove("active");
+  });
+  shadowy.classList.remove("active");
+  configOpt.classList.remove("is-active");
+}

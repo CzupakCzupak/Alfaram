@@ -58,14 +58,14 @@
     display: flex;
     gap: 32px;
     margin-bottom: 32px;
-    align-items: center;
+    align-items: stretch;
+    justify-content: space-between;
 
     &-last {
       margin-bottom: 96px;
     }
 
     &-img {
-      max-width: 912px;
       width: 50%;
     }
 
@@ -79,6 +79,9 @@
       &.black {
         background-color: $grayscale-900;
         color: $white;
+        .gallery__box {
+          height: 100%;
+        }
         .thin-jakarta {
           color: $white;
         }
@@ -295,10 +298,15 @@
   display: flex;
   justify-content: space-between;
   gap: 88px;
+  position: relative;
 }
 
 .configurator {
   margin-bottom: 74px;
+
+  &__select-css {
+    width: 100%;
+  }
 
   &__container {
     max-width: 499px;
@@ -359,6 +367,7 @@
     align-items: center;
     gap: 8px;
     @include jakarta(14px, 20px);
+    font-weight: 500;
     &-sm {
       @include jakarta(12px, 20px, 1px);
       font-weight: 700;
@@ -368,14 +377,17 @@
   }
 
   &__grid {
-    display: grid;
+    &.active {
+      display: grid;
+    }
+    display: none;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-bottom: 12px;
     width: 100%;
   }
 
-  &__select {
+  &__select-css {
     @include jakarta(14px, 24px);
     color: $grayscale-600;
     padding: 12px 20px;
@@ -383,8 +395,45 @@
     align-items: center;
     justify-content: space-between;
     border: 1px solid $grayscale-300;
+    position: relative;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  &__select {
+    &.is-active {
+      .configurator__select-list {
+        display: flex;
+      }
+    }
+    &-list {
+      position: absolute;
+      top: 100%;
+      left: -1px;
+      flex-direction: column;
+      width: calc(100% + 2px);
+      background-color: $white;
+      z-index: 19;
+      border: 1px solid $grayscale-300;
+      display: none;
+    }
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  &__option {
+    padding: 12px 20px;
+    &:not(:last-child) {
+      border-bottom: 1px solid $grayscale-300;
     }
   }
 
@@ -395,6 +444,7 @@
     @include jakarta(14px, 20px);
     padding-bottom: 24px;
     border-bottom: 1px solid $grayscale-400;
+    font-weight: 400;
     &:hover {
       cursor: pointer;
     }
@@ -402,6 +452,16 @@
       border: 1px solid $grayscale-400;
       width: 16px;
       height: 16px;
+      display: grid;
+      place-content: center;
+      &.is-active {
+        &::before {
+          content: "";
+          width: 8px;
+          height: 8px;
+          background-color: $primary-100;
+        }
+      }
     }
   }
 
@@ -414,7 +474,7 @@
   }
 
   &__jakarta-14-20 {
-    .fw-500 {
+    &.fw-500 {
       color: $grayscale-600;
     }
     color: $grayscale-800;
@@ -422,6 +482,7 @@
   }
 
   &__jakarta-12-18 {
+    font-weight: 400;
     &.first {
       width: 132px;
       flex-shrink: 0;
@@ -455,9 +516,12 @@
 }
 
 .slider__container {
+  position: sticky;
+  top: 0;
   display: flex;
   gap: 16px;
   max-width: 797px;
+  height: fit-content;
   #main-slider {
     .splide__slide {
       img {
@@ -483,11 +547,220 @@
       border: unset;
       padding-bottom: 10px;
       display: block;
+      opacity: 0.7;
+      &.is-active {
+        opacity: 1;
+      }
+      img {
+        width: 128px;
+        height: 128px;
+      }
+    }
+  }
+}
+
+.config-options {
+  width: 35vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 221;
+  position: fixed;
+  background-color: $white;
+  transform: translate(100%);
+  transition: 0.3s transform;
+  &.is-active {
+    transform: translate(0);
+  }
+  &__heading {
+    padding: 24px 48px 24px 12px;
+    border-bottom: 1px solid $grayscale-200;
+    .config-name {
+      @include jakarta(18px, 28px);
+      font-weight: 600;
+    }
+    .config-price {
+      span {
+        @include jakarta(12px, 20px);
+        font-weight: 400;
+        color: $grayscale-800;
+      }
+      @include jakarta(18px, 24px);
+      font-weight: 700;
+      color: $primary-800;
+    }
+  }
+
+  &__lights,
+  &__accesories,
+  &__additional {
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 48px;
+    &.active {
+      display: flex;
+    }
+  }
+
+  .w-100.d-f.jc-b.ai-c,
+  .w-100.d-f.ai-c.mb-26.gap-8 {
+    @include jakarta(14px, 20px);
+
+    .black {
+      color: $black;
+    }
+    .gray {
+      color: $grayscale-600;
+    }
+  }
+}
+
+.select {
+  position: relative;
+  padding: 16px 16px 16px 20px;
+  border: 1px solid $grayscale-300;
+  @include jakarta(14px, 24px);
+  &:hover {
+    cursor: pointer;
+  }
+  &.active {
+    ul {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid $grayscale-300;
+    }
+  }
+  ul {
+    top: 100%;
+    left: -1px;
+    background-color: $white;
+    z-index: 200;
+    width: calc(100% + 2px);
+    position: absolute;
+    border: 1px solid $grayscale-300;
+
+    display: none;
+    .light__longevity-option {
+      padding: 16px;
+      &:not(:last-child) {
+        border-bottom: 1px solid $grayscale-300;
+      }
+    }
+  }
+}
+
+.hue {
+  &-css {
+    border: 1px solid $grayscale-200;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    &:hover {
+      cursor: pointer;
+    }
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+  &-box {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    background-color: $grayscale-100;
+  }
+  &-text {
+    @include jakarta(12px, 18px);
+    font-weight: 500;
+  }
+}
+
+.shadow {
+  margin: 12px;
+}
+
+.shadowy {
+  display: none;
+  position: fixed;
+  z-index: 220;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  &.active {
+    display: block;
+  }
+}
+
+.config-text-js {
+  display: none;
+  &.active {
+    display: flex;
+  }
+}
+
+.file-container {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.input-box {
+  display: grid;
+  place-content: center;
+  position: relative;
+  width: 100%;
+  border: 1px dashed var(--grayscale-400, #bdbdbd);
+  padding: 60px 88px 62px 88px;
+
+  .input-file {
+    opacity: 0;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .input-box__placeholder {
+    max-width: 288px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .icon {
+      display: grid;
+      flex-shrink: 0;
+      place-content: center;
+      width: 48px;
+      height: 48px;
+      background-color: $primary-100;
+      border-radius: 500px;
+      margin-bottom: 16px;
+    }
+    .add-logo {
+      text-align: center;
+      @include jakarta(14px, 24px);
+      margin-bottom: 4px;
+    }
+    .vector-file {
+      text-align: center;
+      @include jakarta(12px, 18px);
+      color: $grayscale-800;
     }
   }
 }
 
 @media (max-width: 1326px) {
+  .breadcrumbs {
+    padding-left: 15px;
+  }
   #thumbnail-slider {
     display: none;
   }
@@ -500,6 +773,9 @@
   }
 }
 @media (max-width: 1227px) {
+  .config-options {
+    width: 100vw;
+  }
   .splide__gallery {
     margin: 0 auto 24px;
     padding: 0 24px;
@@ -538,6 +814,11 @@
 }
 
 @media (max-width: 1150px) {
+  .slider__container {
+    position: relative;
+    top: unset;
+  }
+
   .product__hero {
     flex-direction: column;
     align-items: center;

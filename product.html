@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/splide.min.css" />
   </head>
   <body>
+    <div class="shadowy"></div>
     <div class="header__add">
       <div class="container-big">
         <p>
@@ -172,19 +173,22 @@
                 <div class="splide__track">
                   <ul class="splide__list">
                     <li class="splide__slide">
-                      <img src="img/slide-thumbnail-1.png" alt="Thumbnail" />
+                      <img src="img/1.png" alt="Thumbnail" />
                     </li>
                     <li class="splide__slide">
-                      <img src="img/slide-thumbnail-2.png" alt="Thumbnail" />
+                      <img src="img/2.png" alt="Thumbnail" />
                     </li>
                     <li class="splide__slide">
-                      <img src="img/slide-thumbnail-3.png" alt="Thumbnail" />
+                      <img src="img/3.png" alt="Thumbnail" />
                     </li>
                     <li class="splide__slide">
-                      <img src="img/slide-thumbnail-4.png" alt="Thumbnail" />
+                      <img src="img/4.png" alt="Thumbnail" />
                     </li>
                     <li class="splide__slide">
-                      <img src="img/slide-thumbnail-5.png" alt="Thumbnail" />
+                      <img src="img/1.png" alt="Thumbnail" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/2.png" alt="Thumbnail" />
                     </li>
                   </ul>
                 </div>
@@ -193,16 +197,22 @@
                 <div class="splide__track">
                   <ul class="splide__list">
                     <li class="splide__slide">
-                      <img src="img/product-slide-1-page.png" alt="Photo slide 1" />
+                      <img src="img/1.png" alt="Photo slide 1" />
                     </li>
                     <li class="splide__slide">
-                      <img src="img/product-slide-1-page.png" alt="Photo slide 1" />
+                      <img src="img/2.png" alt="Photo slide 1" />
                     </li>
                     <li class="splide__slide">
-                      <img src="img/product-slide-1-page.png" alt="Photo slide 1" />
+                      <img src="img/3.png" alt="Photo slide 1" />
                     </li>
                     <li class="splide__slide">
-                      <img src="img/product-slide-1-page.png" alt="Photo slide 1" />
+                      <img src="img/4.png" alt="Photo slide 1" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/1.png" alt="Photo slide 1" />
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/2.png" alt="Photo slide 1" />
                     </li>
                   </ul>
                 </div>
@@ -220,33 +230,61 @@
                   <p class="configurator__price-discount">490,00 zł</p>
                 </div>
                 <p class="configurator__price-lowest">Najniższa cena z ostatnich 30 dni: 490,00 zł</p>
-                <div class="configurator__grid">
+                <div class="configurator__grid active">
                   <div class="d-f gap-12 fd-c">
                     <p class="configurator__subheading">Szerokość</p>
-                    <div class="configurator__select">
-                      <p>40 cm</p>
+                    <div class="configurator__select configurator__select-css">
+                      <p class="select-value">40 cm</p>
                       <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.5 10L12.5 15L17.5 10" stroke="black" stroke-width="1.5" stroke-linecap="square" />
                       </svg>
+                      <ul class="configurator__select-list">
+                        <li class="configurator__option" data-size="40">40 cm</li>
+                        <li class="configurator__option" data-size="50">50 cm</li>
+                        <li class="configurator__option" data-size="60">60 cm</li>
+                        <li class="configurator__option" data-size="70">70 cm</li>
+                        <li class="configurator__option" data-size="80">80 cm</li>
+                        <li class="configurator__option" data-size="90">90 cm</li>
+                        <li class="configurator__option" data-size="100">100 cm</li>
+                      </ul>
                     </div>
                   </div>
                   <div class="d-f gap-12 fd-c">
                     <p class="configurator__subheading">Wysokość</p>
-                    <div class="configurator__select">
-                      <p>40 cm</p>
+                    <div class="configurator__select configurator__select-css">
+                      <p class="select-value">40 cm</p>
                       <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.5 10L12.5 15L17.5 10" stroke="black" stroke-width="1.5" stroke-linecap="square" />
                       </svg>
+                      <ul class="configurator__select-list">
+                        <li class="configurator__option" data-size="40">40 cm</li>
+                        <li class="configurator__option" data-size="50">50 cm</li>
+                        <li class="configurator__option" data-size="60">60 cm</li>
+                        <li class="configurator__option" data-size="70">70 cm</li>
+                        <li class="configurator__option" data-size="80">80 cm</li>
+                        <li class="configurator__option" data-size="90">90 cm</li>
+                        <li class="configurator__option" data-size="100">100 cm</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
-                <div class="configurator__personal">
+                <div class="configurator__grid personal">
+                  <div class="d-f gap-12 fd-c">
+                    <p class="configurator__subheading">Gejrokość</p>
+                    <input type="number" placeholder="40 cm" class="configurator__select-css" min="40" max="100" />
+                  </div>
+                  <div class="d-f gap-12 fd-c">
+                    <p class="configurator__subheading">Gejsokość</p>
+                    <input type="number" placeholder="40 cm" class="configurator__select-css" min="40" max="100" />
+                  </div>
+                </div>
+                <div class="configurator__personal box-personal">
                   <div class="configurator__personal-box"></div>
                   <p>Wymiary indywidualne</p>
                 </div>
                 <div class="configurator__accordions">
-                  <div class="d-f w-100 jc-b ai-c mb-14">
-                    <div class="d-f gap-8">
+                  <div class="d-f w-100 jc-b ai-c mb-14 open-configurator" data-config="1">
+                    <div class="d-f gap-8 ai-c">
                       <p class="configurator__subheading">Podświetlenie LED</p>
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
@@ -259,22 +297,22 @@
                       </svg>
                     </div>
                   </div>
-                  <div class="d-f gap-8">
+                  <div class="d-f gap-8 config-text-js active">
                     <p class="configurator__jakarta-12-18 first">Barwa:</p>
-                    <p class="configurator__jakarta-12-18">Barwa neutralna 4000K</p>
+                    <p class="configurator__jakarta-12-18 color-name-js">Barwa neutralna 4000K</p>
                   </div>
-                  <div class="d-f gap-8">
+                  <div class="d-f gap-8 config-text-js active">
                     <p class="configurator__jakarta-12-18 first">Taśma LED:</p>
                     <p class="configurator__jakarta-12-18">Taśma RGBNW-24V LED - taśma kolorowa + barwa biała (sterownik+pilot)</p>
                   </div>
-                  <div class="d-f gap-8">
+                  <div class="d-f gap-8 config-text-js active">
                     <p class="configurator__jakarta-12-18 first">Żywotność taśmy LED:</p>
-                    <p class="configurator__jakarta-12-18">Podstawowa 30 000 godz.</p>
+                    <p class="configurator__jakarta-12-18 longevity">Podstawowa 30 000 godz.</p>
                   </div>
                 </div>
                 <div class="configurator__accordions">
-                  <div class="d-f w-100 jc-b ai-c">
-                    <div class="d-f gap-8">
+                  <div class="d-f w-100 jc-b ai-c open-configurator" data-config="2">
+                    <div class="d-f gap-8 ai-c">
                       <p class="configurator__subheading">Akcesoria</p>
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
@@ -287,10 +325,26 @@
                       </svg>
                     </div>
                   </div>
+                  <div class="d-f gap-8 config-text-js">
+                    <p class="configurator__jakarta-12-18 first">Włącznik:</p>
+                    <p class="configurator__jakarta-12-18 switch"></p>
+                  </div>
+                  <div class="d-f gap-8 config-text-js">
+                    <p class="configurator__jakarta-12-18 first">Zegar cyfrowy:</p>
+                    <p class="configurator__jakarta-12-18 clock"></p>
+                  </div>
+                  <div class="d-f gap-8 config-text-js">
+                    <p class="configurator__jakarta-12-18 first">Głośnik Bluetooth:</p>
+                    <p class="configurator__jakarta-12-18 speaker"></p>
+                  </div>
+                  <div class="d-f gap-8 config-text-js">
+                    <p class="configurator__jakarta-12-18 first">Lustro powiększające:</p>
+                    <p class="configurator__jakarta-12-18 mirror-zoom"></p>
+                  </div>
                 </div>
                 <div class="configurator__accordions last">
-                  <div class="d-f w-100 jc-b ai-c">
-                    <div class="d-f gap-8">
+                  <div class="d-f w-100 jc-b ai-c open-configurator" data-config="3">
+                    <div class="d-f gap-8 ai-c">
                       <p class="configurator__subheading">Dodatki</p>
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
@@ -302,6 +356,18 @@
                         <path d="M8 4V12M4 8L12 8.00001" stroke="#424242" stroke-width="1.5" stroke-linecap="square" />
                       </svg>
                     </div>
+                  </div>
+                  <div class="d-f gap-8 config-text-js">
+                    <p class="configurator__jakarta-12-18 first">Folia lub mata:</p>
+                    <p class="configurator__jakarta-12-18 foil"></p>
+                  </div>
+                  <div class="d-f gap-8 config-text-js">
+                    <p class="configurator__jakarta-12-18 first">Logo:</p>
+                    <p class="configurator__jakarta-12-18 logo"></p>
+                  </div>
+                  <div class="d-f gap-8 config-text-js">
+                    <p class="configurator__jakarta-12-18 first">Preparat czyszczący:</p>
+                    <p class="configurator__jakarta-12-18 preparat"></p>
                   </div>
                 </div>
                 <div class="d-f gap-8 w-100 mb-8">
@@ -350,18 +416,284 @@
                 </div>
               </div>
               <div class="w-100 d-f ai-c jc-b">
-                <div class="d-f gap-8 ai-c">
-                  <p class="configurator__subheading-sm">Zapytaj o produkt</p>
+                <a href="#">
+                  <div class="d-f gap-8 ai-c">
+                    <p class="configurator__subheading-sm">Zapytaj o produkt</p>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 3H15M1 3L8 9.42857L15 3M1 3C1 6.33333 0.99998 9.66667 1 13H15C15 9.66667 15 6.33333 15 3" stroke="#424242" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="d-f gap-8 ai-c">
+                    <p class="configurator__subheading-sm">Udostępnij</p>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.7896 7.10519L10.2083 4.89583M10.2104 11.1052L5.79587 8.89795M14 4C14 5.10457 13.1046 6 12 6C10.8954 6 10 5.10457 10 4C10 2.89543 10.8954 2 12 2C13.1046 2 14 2.89543 14 4ZM6 8C6 9.10457 5.10457 10 4 10C2.89543 10 2 9.10457 2 8C2 6.89543 2.89543 6 4 6C5.10457 6 6 6.89543 6 8ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" stroke="#424242" stroke-width="1.25" />
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="config-options">
+        <div class="config-options__container">
+          <div class="config-options__heading d-f ai-c jc-b">
+            <div class="d-f gap-12 ai-c">
+              <svg class="shadow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 12L17 12M7 12L11 8M7 12L11 16" stroke="black" stroke-width="1.5" stroke-linecap="square" />
+              </svg>
+              <p class="config-name">Gaba</p>
+            </div>
+            <div class="config-price d-f gap-8 ai-c">
+              <span>Razem</span>
+              <p class="price-js">449.00 zł</p>
+            </div>
+          </div>
+          <div class="config-options__lights config-activation" data-config="1">
+            <div>
+              <div class="w-100 d-f jc-b ai-c mb-12">
+                <p class="black">Barwa</p>
+                <div class="d-f gray ai-c gap-8">
+                  <p>Informacje</p>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 3H15M1 3L8 9.42857L15 3M1 3C1 6.33333 0.99998 9.66667 1 13H15C15 9.66667 15 6.33333 15 3" stroke="#424242" stroke-linecap="round" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
                   </svg>
                 </div>
-                <div class="d-f gap-8 ai-c">
-                  <p class="configurator__subheading-sm">Udostępnij</p>
+              </div>
+              <div class="hue-css hue-js">
+                <div class="hue-box"></div>
+                <p class="hue-text">Barwa ciepła</p>
+              </div>
+              <div class="hue-css hue-js">
+                <div class="hue-box"></div>
+                <p class="hue-text">Barwa zimna</p>
+              </div>
+              <div class="hue-css hue-js">
+                <div class="hue-box"></div>
+                <p class="hue-text">Barwa umiarkowana</p>
+              </div>
+              <div class="hue-css hue-js">
+                <div class="hue-box"></div>
+                <p class="hue-text">Barwa letnia</p>
+              </div>
+              <div class="hue-css hue-js">
+                <div class="hue-box"></div>
+                <p class="hue-text">Barwa zimowa</p>
+              </div>
+            </div>
+            <div>
+              <div class="w-100 d-f jc-b ai-c mb-12">
+                <p class="black">Żywotność taśmy</p>
+                <div class="d-f gray ai-c gap-8">
+                  <p>Informacje</p>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.7896 7.10519L10.2083 4.89583M10.2104 11.1052L5.79587 8.89795M14 4C14 5.10457 13.1046 6 12 6C10.8954 6 10 5.10457 10 4C10 2.89543 10.8954 2 12 2C13.1046 2 14 2.89543 14 4ZM6 8C6 9.10457 5.10457 10 4 10C2.89543 10 2 9.10457 2 8C2 6.89543 2.89543 6 4 6C5.10457 6 6 6.89543 6 8ZM14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" stroke="#424242" stroke-width="1.25" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
                   </svg>
                 </div>
+              </div>
+              <div class="select" data-config="longevity">
+                <div class="d-f gap-20 w-100 jc-b">
+                  <p class="light__longevity">Podstawowa 30 000 godz.</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="square" />
+                  </svg>
+                </div>
+                <ul class="light__longevity-list" id="firstlist">
+                  <p class="light__longevity-option light__longevity-option1">Podstawowa 30 000 godz.</p>
+                  <p class="light__longevity-option light__longevity-option1">Średnio zaawansowana 40 000 godz.</p>
+                  <p class="light__longevity-option light__longevity-option1">Zaawansowana 50 000 godz.</p>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="config-options__accesories config-activation" data-config="2">
+            <div>
+              <div class="w-100 d-f jc-b ai-c mb-12">
+                <p class="black">Włącznik</p>
+                <div class="d-f gray ai-c gap-8">
+                  <p>Informacje</p>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
+                  </svg>
+                </div>
+              </div>
+              <div class="select" data-config="switch">
+                <div class="d-f gap-20 w-100 jc-b">
+                  <p class="light__longevity">Nie - bezpośrednio do przewodu 230V</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="square" />
+                  </svg>
+                </div>
+                <ul class="light__longevity-list">
+                  <p class="light__longevity-option">Nie - bezpośrednio do przewodu 230V</p>
+                  <p class="light__longevity-option">Tak</p>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="w-100 d-f jc-b ai-c mb-12">
+                <p class="black">Zegar cyfrowy</p>
+                <div class="d-f gray ai-c gap-8">
+                  <p>Informacje</p>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
+                  </svg>
+                </div>
+              </div>
+              <div class="select" data-config="clock">
+                <div class="d-f gap-20 w-100 jc-b">
+                  <p class="light__longevity">Wybierz</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="square" />
+                  </svg>
+                </div>
+                <ul class="light__longevity-list">
+                  <p class="light__longevity-option">Zegar cyfrowy</p>
+                  <p class="light__longevity-option">Zegar multimedialny</p>
+                  <p class="light__longevity-option">Zegar ścienny</p>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="w-100 d-f jc-b ai-c mb-12">
+                <p class="black">Głośnik bluetooth</p>
+                <div class="d-f gray ai-c gap-8">
+                  <p>Informacje</p>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
+                  </svg>
+                </div>
+              </div>
+              <div class="select" data-config="speaker">
+                <div class="d-f gap-20 w-100 jc-b">
+                  <p class="light__longevity">Wybierz</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="square" />
+                  </svg>
+                </div>
+                <ul class="light__longevity-list">
+                  <p class="light__longevity-option">JBL</p>
+                  <p class="light__longevity-option">Tracer</p>
+                  <p class="light__longevity-option">Boombox MAN</p>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="w-100 d-f jc-b ai-c mb-12">
+                <p class="black">Lusterko powiększające</p>
+                <div class="d-f gray ai-c gap-8">
+                  <p>Informacje</p>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
+                  </svg>
+                </div>
+              </div>
+              <div class="select" data-config="mirror-zoom">
+                <div class="d-f gap-20 w-100 jc-b">
+                  <p class="light__longevity">Wybierz</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="square" />
+                  </svg>
+                </div>
+                <ul class="light__longevity-list">
+                  <p class="light__longevity-option">Tak</p>
+                  <p class="light__longevity-option">Nie</p>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="config-options__additional config-activation" data-config="3">
+            <div>
+              <div class="w-100 d-f jc-b ai-c mb-12">
+                <p class="black">Folia zabezpieczająca lub mata antyparowa</p>
+                <div class="d-f gray ai-c gap-8">
+                  <p>Informacje</p>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
+                  </svg>
+                </div>
+              </div>
+              <div class="select" data-config="foil">
+                <div class="d-f gap-20 w-100 jc-b">
+                  <p class="light__longevity">Nie</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="square" />
+                  </svg>
+                </div>
+                <ul class="light__longevity-list">
+                  <p class="light__longevity-option">Nie</p>
+                  <p class="light__longevity-option">Folia zabezpieczająca</p>
+                  <p class="light__longevity-option">Mata antyparowa</p>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="w-100 d-f jc-b ai-c mb-12">
+                <p class="black">Twoje logo na lustrze</p>
+                <div class="d-f gray ai-c gap-8">
+                  <p>Informacje</p>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
+                  </svg>
+                </div>
+              </div>
+              <div class="select" data-config="logo">
+                <div class="d-f gap-20 w-100 jc-b">
+                  <p class="light__longevity">Nie</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="square" />
+                  </svg>
+                </div>
+                <ul class="light__longevity-list">
+                  <p class="light__longevity-option">Nie</p>
+                  <p class="light__longevity-option">Tak:PRAWO</p>
+                  <p class="light__longevity-option">Tak:LEWO</p>
+                </ul>
+              </div>
+            </div>
+            <div class="file-container">
+              <div class="w-100 d-f ai-c mb-26 gap-8">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
+                </svg>
+                <p class="black">Rozmiar logo na lustrze 10x10 cm</p>
+              </div>
+              <div class="input-box">
+                <div class="input-box__placeholder">
+                  <div class="icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 9L12 4M12 4L7 9M12 4L12 17M19 18V20H5V18" stroke="black" stroke-width="1.5" stroke-linecap="square" />
+                    </svg>
+                  </div>
+                  <p class="add-logo">Dodaj logo</p>
+                  <p class="vector-file">Plik wektorowy - AI, EPS, SVG</p>
+                </div>
+                <input type="file" id="avatar" name="avatar" accept="image/eps, image/svg, image/ai" class="input-file" />
+              </div>
+            </div>
+            <div>
+              <div class="w-100 d-f jc-b ai-c mb-12">
+                <p class="black">Preparat do czyszczenia luster</p>
+                <div class="d-f gray ai-c gap-8">
+                  <p>Informacje</p>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1ZM7 7V12H9V7H7ZM9 6V4H7V6H9Z" fill="#DDC08D" />
+                  </svg>
+                </div>
+              </div>
+              <div class="select" data-config="preparat">
+                <div class="d-f gap-20 w-100 jc-b">
+                  <p class="light__longevity">Nie</p>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="black" stroke-width="1.5" stroke-linecap="square" />
+                  </svg>
+                </div>
+                <ul class="light__longevity-list">
+                  <p class="light__longevity-option">Nie</p>
+                  <p class="light__longevity-option">Tak</p>
+                </ul>
               </div>
             </div>
           </div>
